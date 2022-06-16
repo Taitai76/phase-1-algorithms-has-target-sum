@@ -1,6 +1,22 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let isSum= false;
+  let testArray = [...array];
+  for (let i = 0; i<array.length; i++){
+    array.shift();
+    for (const num of array){
+      let x = testArray[i]+ num;
+
+      if (x === target){
+        isSum = true;
+        return isSum;
+      }else{
+        isSum = false;
+      }
+    }
+  }
+  return isSum;
 }
+
 
 /* 
   Write the Big O time complexity of your function here
